@@ -1,4 +1,6 @@
 {
-    "source": [
-    ]
+    "source_dirs": [
+        "Y:\\tv_test"
+    ],
+    "dest_dir" : "Y:\\shows_test"
 }
