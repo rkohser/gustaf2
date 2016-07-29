@@ -2,5 +2,14 @@
     "source_dirs": [
         "Y:\\tv_test"
     ],
-    "dest_dir" : "Y:\\shows_test"
+    "dest_dir" : "Y:\\shows_test",
+
+    "subtitle_languages": [
+        "eng",
+        "fra"
+    ],
+    "subtitle_providers": [
+        "opensubtitles",
+        "addic7ed"
+    ]
 }
