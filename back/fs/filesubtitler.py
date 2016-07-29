@@ -62,10 +62,17 @@ class FileSubtitler:
 
             ep_path = os.path.join(episode['dir'], episode['filename'])
             sub_episode = Episode.fromguess(ep_path, episode)
+
+            # Look for external subtitles (not done automatically, apparently)
+            sub_episode.subtitle_languages |= set(search_external_subtitles(sub_episode.name).values())
+
             subl_episodes.add(sub_episode)
 
+        # download subtitles in the specified language
         subl_subtitles = download_best_subtitles(subl_episodes, bb_lang, self.providers)
 
         for video, subtitles in subl_subtitles.items():
 
             save_subtitles(video, subtitles)
+
+            # save subtitle languages in episode dict
