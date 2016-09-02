@@ -14,5 +14,5 @@ if __name__ == '__main__':
     fs = FileSubtitler(settings['subtitle_languages'], settings['subtitle_providers']);
 
     episodes = ff.find()
-    fm.move(episodes)
+    fm.move(episodes, keep_original=True)
     fs.subtitle(episodes)

@@ -1,2 +1,2 @@
 from . import configurator
-configurator.init('..\\settings.json')
+configurator.init('settings.json')
