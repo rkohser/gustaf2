@@ -4,6 +4,12 @@
     ],
     "dest_dir" : "Y:\\shows_test",
 
+    "source_extensions": [
+        "mkv",
+        "avi",
+        "mp4"
+    ],
+
     "subtitle_languages": [
         "eng",
         "fra"
