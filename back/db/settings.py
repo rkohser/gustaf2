@@ -7,28 +7,34 @@ RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
 ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'DELETE']
 
 DOMAIN = {
-    'episode': {
-
-    }
-}
-
-episode_schema = {
-    'show': {
-        'type': 'string'
-    },
-    'season_number': {
-        'type': 'integer'
-    },
-    'episode_number': {
-        'type': 'integer'
-    },
-    'path':{
-        'type': 'string'
-    },
-    'subtitles': {
-        'type': 'list',
+    'episodes': {
+        'allow_unknown': True,
         'schema': {
-            'type': 'string'
+            'title': {
+                'type': 'string'
+            },
+            'season': {
+                'type': 'integer'
+            },
+            'episode': {
+                'type': [
+                    'integer',
+                    'list'
+                ]
+            },
+            'subtitle_language': {
+                'type': 'string'
+            },
+            'type': {
+                'type': 'string'
+            },
+            'dir': {
+                'type': 'string'
+            },
+            'filename': {
+                'type': 'string'
+            }
         }
     }
 }
+
