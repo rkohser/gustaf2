@@ -1,8 +1,8 @@
 {
     "source_dirs": [
-        "Y:\\tv_test"
+        "Y:\\gustaf_tests\\tv_test"
     ],
-    "dest_dir" : "Y:\\shows_test",
+    "dest_dir" : "Y:\\gustaf_tests\\shows_test",
 
     "source_extensions": [
         "mkv",
