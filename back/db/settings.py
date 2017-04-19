@@ -35,6 +35,16 @@ DOMAIN = {
                 'type': 'string'
             }
         }
+    },
+    'shows': {
+        'datasource': {
+            'source': 'episodes',
+            'aggregation': {
+                'pipeline': [
+                    {'$group': {'_id':'$title'}}
+                ]
+            }
+        }
     }
 }
 
