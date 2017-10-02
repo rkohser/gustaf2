@@ -1,13 +1,13 @@
 MONGO_HOST = 'localhost'
 MONGO_PORT = 27017
 
-MONGO_DBNAME = 'gustaf'
+MONGO_DBNAME = 'gustaf_db'
 
 RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
 ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'DELETE']
 
 DOMAIN = {
-    'episodes': {
+    'gustaf_episodes': {
         'allow_unknown': True,
         'schema': {
             'title': {
@@ -38,10 +38,10 @@ DOMAIN = {
     },
     'shows': {
         'datasource': {
-            'source': 'episodes',
+            'source': 'gustaf_episodes',
             'aggregation': {
                 'pipeline': [
-                    {'$group': {'_id':'$title'}}
+                    {'$group': {'_id':'$series'}}
                 ]
             }
         }
