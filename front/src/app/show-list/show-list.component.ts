@@ -1,6 +1,7 @@
 import { GustafDbService } from '../gustaf-db.service';
 import { Show } from '../show';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-show-list',
@@ -11,8 +12,11 @@ export class ShowListComponent implements OnInit {
 
   shows: Show[];
 
+  public showsForm: FormGroup;
+
   constructor(
-    private gustafDbService: GustafDbService
+    private gustafDbService: GustafDbService,
+    private formBuilder: FormBuilder
   ) { }
 
   getShows(): void {
@@ -23,6 +27,9 @@ export class ShowListComponent implements OnInit {
 
   ngOnInit() {
     this.getShows();
+    this.showsForm = this.formBuilder.group({
+      'model': null
+    });
   }
 
 }

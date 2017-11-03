@@ -6,16 +6,21 @@ import { GustafDbService } from './gustaf-db.service';
 import { ShowListComponent } from './show-list/show-list.component';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EpisodeListComponent } from './episode-list/episode-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowListComponent
+    ShowListComponent,
+    EpisodeListComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [GustafDbService],
   bootstrap: [AppComponent]

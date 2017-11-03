@@ -1,4 +1,13 @@
-<p>GUSTAF SHOWS</p>
-<ul>
-  <li *ngFor="let show of shows">{{show._id}}</li>
-</ul>
+<form [formGroup]="showsForm">
+  <div class="btn-group-vertical" ngbRadioGroup name="radioBasic" formControlName="model">
+    <label *ngFor="let show of shows" ngbButtonLabel class="btn-primary">
+      <input ngbButton type="radio" [value]="show._id">{{show._id}}
+    </label>
+  </div>
+</form>
+<hr>
+<pre>{{showsForm.value['model']}}</pre>
+
+
+
+
