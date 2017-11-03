@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { GustafDbService } from './gustaf-db.service';
 import { ShowListComponent } from './show-list/show-list.component';
 import { HttpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    NgbModule.forRoot()
   ],
   providers: [GustafDbService],
   bootstrap: [AppComponent]
