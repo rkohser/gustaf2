@@ -2,5 +2,9 @@
   "/shows": {
     "target": "http://localhost:5001",
     "secure": false
+  },
+  "/gustaf_episodes": {
+    "target": "http://localhost:5001",
+    "secure": false
   }
 }

@@ -1,4 +1,5 @@
 import { Show } from './show';
+import { Episode } from './episode';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
@@ -6,6 +7,7 @@ import { Http } from '@angular/http';
 export class GustafDbService {
 
   private showsUrl = 'shows';
+  private episodesUrl = 'gustaf_episodes';
 
   constructor(private http: Http) {}
 
@@ -14,6 +16,23 @@ export class GustafDbService {
               .toPromise()
               .then(response => response.json()._items as Show[])
               .catch(this.handleError);
+  }
+
+  getEpisodesPerShow(show_id: string): Promise<Episode[]> {
+
+    return this.http.get(this.episodesUrl,
+              {params: { 'where': '{"series":"' + show_id + '"}'}})
+              .toPromise()
+              .then(this.handleEpisode)
+              .catch(this.handleError);
+  }
+
+  private handleEpisode(response): Episode[] {
+    return response.json()._items.map( item => new Episode(
+        item['season'],
+        item['episodeNumber']
+        )
+    );
   }
 
   private handleError(error: any): Promise<any> {

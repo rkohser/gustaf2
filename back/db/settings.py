@@ -45,6 +45,12 @@ DOMAIN = {
                 ]
             }
         }
+    },
+    'episodes': {
+        'datasource': {
+            'source': 'gustaf_episodes',
+            
+        }
     }
 }
 
