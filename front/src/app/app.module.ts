@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EpisodeListComponent } from './episode-list/episode-list.component';
+import { GustafStatusService } from './gustaf-status.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,10 @@ import { EpisodeListComponent } from './episode-list/episode-list.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [GustafDbService],
+  providers: [
+    GustafDbService,
+    GustafStatusService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

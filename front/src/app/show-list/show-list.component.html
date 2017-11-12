@@ -1,7 +1,7 @@
 <form [formGroup]="showsForm">
   <div class="btn-group-vertical" ngbRadioGroup name="radioBasic" formControlName="model">
     <label *ngFor="let show of shows" ngbButtonLabel class="btn-primary">
-      <input ngbButton type="radio" [value]="show._id">{{show._id}}
+      <input ngbButton type="radio" [value]="show._id" (click)=updateCurrentShow(show._id)>{{show._id}}
     </label>
   </div>
 </form>
