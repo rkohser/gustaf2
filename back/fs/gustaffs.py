@@ -9,7 +9,7 @@ import common.configurator as config
 
 
 #Specify mongodb host and datababse to connect to
-BROKER_URL = 'mongodb://localhost:27017/gustaf_fs'
+BROKER_URL = 'mongodb://server:27017/gustaf_fs'
 
 celery_fs = Celery('gustaf_fs',broker=BROKER_URL)
 

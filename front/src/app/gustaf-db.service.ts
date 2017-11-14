@@ -7,7 +7,7 @@ import { Http } from '@angular/http';
 export class GustafDbService {
 
   private showsUrl = 'shows';
-  private episodesUrl = 'gustaf_episodes';
+  private episodesUrl = 'episodes';
 
   constructor(private http: Http) {}
 
@@ -21,18 +21,10 @@ export class GustafDbService {
   getEpisodesPerShow(show_id: string): Promise<Episode[]> {
 
     return this.http.get(this.episodesUrl,
-              {params: { 'where': '{"series":"' + show_id + '"}'}})
+              {params: { 'where': '{"title":"' + show_id + '"}'}})
               .toPromise()
-              .then(this.handleEpisode)
+              .then(response => response.json()._items as Episode[])
               .catch(this.handleError);
-  }
-
-  private handleEpisode(response): Episode[] {
-    return response.json()._items.map( item => new Episode(
-        item['season'],
-        item['episodeNumber']
-        )
-    );
   }
 
   private handleError(error: any): Promise<any> {

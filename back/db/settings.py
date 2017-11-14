@@ -7,7 +7,7 @@ RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
 ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'DELETE']
 
 DOMAIN = {
-    'gustaf_episodes': {
+    'episodes': {
         'allow_unknown': True,
         'schema': {
             'title': {
@@ -38,18 +38,12 @@ DOMAIN = {
     },
     'shows': {
         'datasource': {
-            'source': 'gustaf_episodes',
+            'source': 'episodes',
             'aggregation': {
                 'pipeline': [
-                    {'$group': {'_id':'$series'}}
+                    {'$group': {'_id':'$title'}}
                 ]
             }
-        }
-    },
-    'episodes': {
-        'datasource': {
-            'source': 'gustaf_episodes',
-            
         }
     }
 }

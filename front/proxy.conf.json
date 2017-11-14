@@ -3,7 +3,7 @@
     "target": "http://localhost:5001",
     "secure": false
   },
-  "/gustaf_episodes": {
+  "/episodes": {
     "target": "http://localhost:5001",
     "secure": false
   }

@@ -1,6 +1,6 @@
 import { GustafDbService } from '../gustaf-db.service';
 import { GustafStatusService } from '../gustaf-status.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Episode } from '../episode';
 import { Show } from '../show';
 
@@ -9,7 +9,7 @@ import { Show } from '../show';
   templateUrl: './episode-list.component.html',
   styleUrls: ['./episode-list.component.css']
 })
-export class EpisodeListComponent implements OnInit {
+export class EpisodeListComponent {
 
   episodes: Episode[];
 
@@ -26,11 +26,6 @@ export class EpisodeListComponent implements OnInit {
   getEpisodes(show_id: string) {
     this.gustafDbService.getEpisodesPerShow(show_id)
       .then(episodes => this.episodes = episodes);
-  }
-
-
-  ngOnInit() {
-    this.getEpisodes('Ballers');
   }
 
 }

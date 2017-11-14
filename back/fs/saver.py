@@ -12,7 +12,7 @@ class Saver:
         for episode in episodes:
             json_episode = json.dumps(episode, cls=GustafSerializer, indent=4)
             headers = {'content-type': 'application/json'}
-            response = requests.post("http://127.0.0.1:5001/episodes", data=json_episode, headers=headers)
+            response = requests.post("http://localhost:5001/episodes", data=json_episode, headers=headers)
             response.raise_for_status()
 
             with open("episode.json", "w") as json_file:

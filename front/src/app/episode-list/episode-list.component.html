@@ -1,11 +1,9 @@
-<p>
-  episode-list works!
-</p>
 <table class="table table-striped">
 	<tbody>
 		<tr *ngFor="let episode of episodes">
-			<th scope="row">{{episode.seasonNumber}}</th>
-			<th scope="row">{{episode.episodeNumber}}</th>
+			<th scope="row">{{episode['season']}}</th>
+			<th scope="row">{{episode['episode']}}</th>
+			<th scope="row">{{episode['filename']}}</th>
 		</tr>
 	</tbody>
 </table>
