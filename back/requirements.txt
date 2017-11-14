@@ -18,6 +18,7 @@ guessit==2.0.5
 itsdangerous==0.24
 Jinja2==2.9.6
 kombu==3.0.35
+lxml==4.1.1
 MarkupSafe==0.23
 pbr==1.10.0
 pymongo==3.4.0
