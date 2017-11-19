@@ -26,7 +26,7 @@ def refresh():
     saver = Saver()
 
     episodes = ff.find()
-    fm.move(episodes, keep_original=True)
+    fm.move(episodes, keep_original=False)
     subtitler.subtitle(episodes)
     saver.save(episodes)
 

@@ -1,6 +1,5 @@
-from flask import Flask, request
+from flask import Flask, request, Response
 from fs.gustaffs import refresh as fs_refresh
-from flask.helpers import send_file
 
 from rest.playlistgenerator import PlaylistGenerator
 
@@ -20,9 +19,13 @@ def playlist():
     show = request.args.get('show')
     
     pg = PlaylistGenerator(show)
-    pg.generate();
+    xspf = pg.generate();
     
-    return send_file(r'E:\workspace\gustaf2\xspfplaylist.xspf', as_attachment=True)
+    return Response(xspf,
+                    mimetype='text/xspf',
+                    headers={
+                        "Content-disposition":"attachement;filename=playlist.xspf"
+                    })
 
 
 if __name__ == "__main__":
