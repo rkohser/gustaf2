@@ -9,6 +9,8 @@ ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'DELETE']
 DOMAIN = {
     'episodes': {
         'allow_unknown': True,
+        'default_sort': [('episode', 1)],
+        'sorting': True,
         'schema': {
             'title': {
                 'type': 'string'
@@ -17,10 +19,7 @@ DOMAIN = {
                 'type': 'integer'
             },
             'episode': {
-                'type': [
-                    'integer',
-                    'list'
-                ]
+                'type': 'integer',
             },
             'subtitle_language': {
                 'type': 'string'
