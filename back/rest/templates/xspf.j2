@@ -2,7 +2,7 @@
 <playlist version="1" xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/">
 	<title>{{show}}</title>
 	<trackList>
-		{% for episode in episodes|sort(attribute='episode') %}
+		{% for episode in episodes %}
 		<track>
 			<title>{{episode.filename}}</title>
 			<location>{{episode.dir|tofileurl}}/{{episode.filename}}</location>
