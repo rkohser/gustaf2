@@ -45,7 +45,8 @@ class PlaylistGenerator(object):
     def collect_episodes(self):
         
         payload = {
-            'where': '{"title":"%s"}' % self.show
+            'where': '{"title":"%s"}' % self.show,
+            'sort': 'episode'
         }
         return requests.get('http://localhost:5001/episodes', params=payload).json()['_items']
         

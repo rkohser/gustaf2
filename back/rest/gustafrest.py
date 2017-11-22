@@ -19,7 +19,7 @@ def playlist():
     show = request.args.get('show')
     
     pg = PlaylistGenerator(show)
-    xspf = pg.generate();
+    xspf = pg.generate()
     
     return Response(xspf,
                     mimetype='text/xspf',

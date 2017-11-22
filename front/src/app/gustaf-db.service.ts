@@ -21,7 +21,13 @@ export class GustafDbService {
   getEpisodesPerShow(show_id: string): Promise<Episode[]> {
 
     return this.http.get(this.episodesUrl,
-              {params: { 'where': '{"title":"' + show_id + '"}'}})
+              {
+                params: {
+                'where': '{"title":"' + show_id + '"}',
+                'sort': 'episode'
+                }
+              }
+              )
               .toPromise()
               .then(response => response.json()._items as Episode[])
               .catch(this.handleError);
